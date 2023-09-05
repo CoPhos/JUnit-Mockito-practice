@@ -5,6 +5,11 @@ public class Money {
     private final String currency;
 
     public Money(int amount, String currency){
+        if(amount < 0){
+            throw new IllegalArgumentException(
+                    "illegal amount: [" + amount + "]"
+            );
+        }
         this.amount = amount;
         this.currency = currency;
     }
