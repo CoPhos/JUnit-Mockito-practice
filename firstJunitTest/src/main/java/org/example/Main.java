@@ -87,4 +87,13 @@ public class Main {
         // Using max()
         int max = Collections.max(numbers);
         System.out.println("Maximum Element: " + max);}
+	public static int linearSearch(int[] array, int searched) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == searched) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }
