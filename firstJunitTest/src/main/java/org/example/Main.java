@@ -180,7 +180,24 @@ public class Main {
       System.out.format("\nroot2 = %.2f-%.2fi", real, imaginary);
     }
   }
+int decimal = 78;
+        int octal = convertDecimalToOctal(decimal);
+        System.out.printf("%d in decimal = %d in octal", decimal, octal);
+    
 }
+public static int convertDecimalToOctal(int decimal)
+    {
+        int octalNumber = 0, i = 1;
+
+        while (decimal != 0)
+        {
+            octalNumber += (decimal % 8) * i;
+            decimal /= 8;
+            i *= 10;
+        }
+
+        return octalNumber;
+    }
 
     public static int hcf(int n1, int n2)
     {
