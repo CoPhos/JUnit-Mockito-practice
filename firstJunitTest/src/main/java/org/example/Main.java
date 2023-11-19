@@ -7,6 +7,30 @@ public class Main {
 
     int foundIndex = jumpSearch(arr, ele);
     System.out.println(foundIndex > 0 ? "Found at index : " + foundIndex : "Element Not Found");
+
+    Main thread = new Main();
+    thread.start();
+    // Wait for the thread to finish
+    while(thread.isAlive()) {
+    System.out.println("Waiting..."); 
+  
+  // Update amount and print its value
+  System.out.println("Main: " + amount);
+  amount++;
+  System.out.println("Main: " + amount);
+
+
+     //Initialize array  
+        int [] arr = new int [] {25, 11, 7, 75, 56};  
+        //Initialize min with first element of array.  
+        int min = arr[0];  
+        //Loop through the array  
+        for (int i = 0; i < arr.length; i++) {  
+            //Compare elements of array with min  
+           if(arr[i] <min)  
+               min = arr[i];  
+        }  
+        System.out.println("Smallest element present in given array: " + min);  
   }
 
   public static int jumpSearch(int[] arr, int ele) {
@@ -110,18 +134,6 @@ public class Main {
 	}
      public static int amount = 0;
 
-  public static void main(String[] args) {
-    Main thread = new Main();
-    thread.start();
-    // Wait for the thread to finish
-    while(thread.isAlive()) {
-    System.out.println("Waiting...");
-  }
-  // Update amount and print its value
-  System.out.println("Main: " + amount);
-  amount++;
-  System.out.println("Main: " + amount);
-  }
   public void run() {
     amount++;
   }
