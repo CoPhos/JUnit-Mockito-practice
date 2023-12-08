@@ -24,7 +24,6 @@ public class Main {
       else
         high = mid - 1;
     }
-
     return -1;
   }
     
@@ -40,8 +39,6 @@ public class Main {
             this.left = null;  
             this.right = null;  
         }  
-      }  
-  
       //Represent the root of binary tree  
       public Node root;  
   
@@ -157,7 +154,9 @@ public class Main {
   
           }  
       }  
+    }
 
+    
     public static void main(String[] args) {
         BinarySearchTree bt = new BinarySearchTree();  
           //Add nodes to the binary tree  
@@ -253,6 +252,24 @@ public class Main {
             }
             System.out.println();
         }
+
+        String path = System.getProperty("user.dir");
+        
+        System.out.println("Working Directory = " + path);
+
+         String path = System.getProperty("user.dir") + "\\src\\test.txt";
+        Charset encoding = Charset.defaultCharset();
+
+        List<String> lines = Files.readAllLines(Paths.get(path), encoding);
+        System.out.println(lines);
+
+        String path = System.getProperty("user.dir") + "\\src\\test.txt";
+        String text = "Added text";
+
+        try {
+            Files.write(Paths.get(path), text.getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            //
+        }
     }
   }
-}
