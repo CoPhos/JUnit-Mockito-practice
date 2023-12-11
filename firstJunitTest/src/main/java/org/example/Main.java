@@ -271,5 +271,43 @@ public class Main {
         } catch (IOException e) {
             //
         }
+         String path = System.getProperty("user.dir") + "\\src\\test.txt";
+        String text = "Added text";
+
+        try {
+            Files.write(Paths.get(path), text.getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            //
+        }
+        
+        String path = System.getProperty("user.dir") + "\\src\\test.txt";
+        String text = "Added text";
+
+        try {
+            FileWriter fw = new FileWriter(path, true);
+            fw.write(text);
+            fw.close();
+        }
+        catch(IOException e) {
+            //
+        }
+
+        String path = System.getProperty("user.dir") + "\\src\\test.txt";
+
+        try {
+            byte[] encoded = Files.readAllBytes(Paths.get(path));
+            System.out.println(Arrays.toString(encoded));
+        } catch (IOException e) {
+            //
+        }
+         String path = System.getProperty("user.dir") + "\\src\\test.txt";
+        String finalPath = System.getProperty("user.dir") + "\\src\\final.txt";
+
+        try {
+            byte[] encoded = Files.readAllBytes(Paths.get(path));
+            Files.write(Paths.get(finalPath), encoded);
+        } catch (IOException e) {
+            //
+        }
     }
   }
