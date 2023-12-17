@@ -1,3 +1,5 @@
+package org.example;
+
 /***
  * Excerpted from "Mockito Made Clear",
  * published by The Pragmatic Bookshelf.
