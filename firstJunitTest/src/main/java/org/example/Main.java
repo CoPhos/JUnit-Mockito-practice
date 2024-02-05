@@ -385,6 +385,32 @@ public class Main {
             String fileName = stringFile.substring(index + 1);
             System.out.println("File Name: " + fileName);
         }
+	 File file = new File("Test.java");
+
+    // convert the file name into string
+    String fileName = file.toString();
+
+    int index = fileName.lastIndexOf('.');
+    if(index > 0) {
+      String extension = fileName.substring(index + 1);
+      System.out.println("File extension is " + extension);
+    }
+     File directory = new File("Directory");
+
+    // list all files present in the directory
+    File[] files = directory.listFiles();
+    System.out.println("Files\t\t\tExtension");
+
+    for(File file : files) {
+      // convert the file name into string
+      String fileName = file.toString();
+
+      int index = fileName.lastIndexOf('.');
+      if(index > 0) {
+        String extension = fileName.substring(index + 1);
+        System.out.println(fileName + "\t" + extension);
+      }
+    }
 
     }
   }
